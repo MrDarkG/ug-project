@@ -9,12 +9,12 @@
 
 ## Instruction
 ```sh
-\#composer update
-\#php artisan key:generate
-\#composer require pusher/pusher-php-server
-\#php artisan migrate
-\#php artisan db:seed --class deadlineseeder
-\#php artisan serve
+$ composer update
+$ php artisan key:generate
+$ composer require pusher/pusher-php-server
+$ php artisan migrate
+$ php artisan db:seed --class deadlineseeder
+$ php artisan serve
 ```
 ## About Laravel
 
