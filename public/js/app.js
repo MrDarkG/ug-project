@@ -2127,19 +2127,19 @@ Vue.use(vuejs_countdown_timer__WEBPACK_IMPORTED_MODULE_0___default.a);
       axios.post("idea/store", {
         "title": this.ideadtext
       }).then(function (response) {
-        if (response.data["status"] == 0) {
-          _this2.$notify({
-            group: 'foo',
-            title: 'Idea had been unliked',
-            text: 'Unliked!',
-            type: 'error '
-          });
-        } else {
+        if (response.data["status"] == 2) {
           _this2.$notify({
             group: 'foo',
             title: 'Deadline ended',
             text: 'Deadline ended!',
             type: 'warn'
+          });
+        } else if (response.data["status"] != 0) {
+          _this2.$notify({
+            group: 'foo',
+            title: 'Idea had been posted',
+            text: 'Posted!',
+            type: 'success '
           });
         }
       });

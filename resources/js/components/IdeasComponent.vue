@@ -106,20 +106,21 @@ Vue.use(VueCountdownTimer)
 				axios.post("idea/store",{
 					"title":this.ideadtext
 				}).then(response=>{
-					if(response.data["status"]==0){
-						this.$notify({
-						  group: 'foo',
-						  title: 'Idea had been unliked',
-						  text: 'Unliked!',
-						  type: 'error ',
-						});
-					}
-					else{
+					if(response.data["status"]==2){
+						
 						this.$notify({
 						  group: 'foo',
 						  title: 'Deadline ended',
 						  text: 'Deadline ended!',
 						  type: 'warn',
+						});
+					}
+					else if(response.data["status"]!=0){
+						this.$notify({
+						  group: 'foo',
+						  title: 'Idea had been posted',
+						  text: 'Posted!',
+						  type: 'success ',
 						});
 					}
 						
